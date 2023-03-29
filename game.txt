@@ -1,0 +1,24 @@
+import random
+a=[]
+n=[]
+n=int(input('Привіт! Введи максимальне число для гри:'))
+for i in range (10):
+  a.append(random.randint(1, n))
+number=random.choice(a)
+guessesTaken = 0
+myName = input ('Привіт! Як тебе звати?')
+print('Отже, ' + myName + ', Я задумав число від 1 до', n)    
+while True:
+    guess = int(input ('Спробуй відгадати.'))
+    guessesTaken += 1 
+    if guess < number:
+        print('Твоє число менше за задумане.') 
+    if guess > number:
+        print('Твоє число більше за задумане.')
+    if guess == number:
+        break
+if guess == number:
+    guessesTaken = str(guessesTaken)
+    print('Дуже добре, ' + myName + '! Для відгадування тобі знадобилося ' + guessesTaken + ' разів!') 
+else:
+  print('Ні. Число, яке я задумав -  ', number)
